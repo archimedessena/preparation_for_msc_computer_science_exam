@@ -1,25 +1,31 @@
 # To-do list manager
+task = [] 
 def add_task():
-    task = [] 
-    add = input("Add task: ")
-    task.append(add)
+    ask = input("Do you want to add a task? (yes/no): ")
+    while ask != "no":
+        add_ = input("Add task: ")
+        ask = input("Do you want to add a task? (yes/no): ")
+        task.append(add_)
+ 
+    #print(task)
+
+
+def view(task):
+    for i in task:
+        print("Your tasks are: ", i)
+   # print(task)
+  
+def remove_task(task):
+    for i in task:
+        task[i].pop()
     return task
-    
-    
-                
-   # while task_1 < 10:
-   #     task_for_the_day = input("Enter your task for the day: ")
-   #     task.append(task_for_the_day)
-   #     task_1 +=1 
-   #     break
-   # return task 
+        
 
 
-def view():
-    tasks = add_task()
-    print(tasks)
-    
+
+def mark_as_done():
+    pass
     
     
 add_task()
-view()
+view(task)
